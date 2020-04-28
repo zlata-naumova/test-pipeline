@@ -1,0 +1,22 @@
+{
+  "name": "test-pipeline",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/zlata-naumova/test-pipeline.git"
+  },
+  "author": "zlata",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/zlata-naumova/test-pipeline/issues"
+  },
+  "homepage": "https://github.com/zlata-naumova/test-pipeline#readme",
+  "devDependencies": {
+    "cypress": "^4.4.1"
+  }
+}
