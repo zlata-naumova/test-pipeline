@@ -1,7 +1,7 @@
 pipeline {
   agent {
     docker {
-      image 'cypress/base:10'
+      image 'cypress/browsers:node10.16.0-chrome77'
     }
 
   }
