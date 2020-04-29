@@ -16,6 +16,7 @@ pipeline {
 
     stage('cypress parallel tests') {
       environment {
+        CYPRESS_RECORD_KEY = 057658b1-efb7-48e9-af52-d4f312cef86f
         CYPRESS_trashAssetsBeforeRuns = 'false'
       }
       parallel {
