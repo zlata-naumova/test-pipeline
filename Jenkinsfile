@@ -11,6 +11,9 @@ pipeline {
         echo "Running build ${env.BUILD_ID} on ${env.JENKINS_URL}"
         sh 'npm ci'
         sh '$(npm bin)/cypress verify'
+        sh '''pwd
+cd /var/jenkins_home/workspace/test-pipeline2_master/cypress/integration/examples
+ls'''
       }
     }
 
@@ -22,14 +25,14 @@ pipeline {
         stage('tester A') {
           steps {
             echo "Running build ${env.BUILD_ID}"
-            sh '$(npm bin)/cypress run --record --parallel'
+            sh '$(npm bin)/cypress run --record'
           }
         }
 
         stage('tester B') {
           steps {
             echo "Running build ${env.BUILD_ID}"
-            sh '$(npm bin)/cypress run --record --parallel'
+            sh '$(npm bin)/cypress run --record'
           }
         }
 
