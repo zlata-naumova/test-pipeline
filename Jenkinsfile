@@ -28,7 +28,7 @@ pipeline {
         // we can load the record key variable from credentials store
         // see https://jenkins.io/doc/book/using/using-credentials/
 
-        CYPRESS_RECORD_KEY = credentials('475a6393-b6e3-4065-86d1-b118626b5370')
+        // CYPRESS_RECORD_KEY = credentials('475a6393-b6e3-4065-86d1-b118626b5370')
 
         // because parallel steps share the workspace they might race to delete
         // screenshots and videos folders. Tell Cypress not to delete these folders
@@ -42,7 +42,7 @@ pipeline {
         stage('tester A') {
           steps {
             echo "Running build ${env.BUILD_ID}"
-            sh '$(npm bin)/cypress run --record --parallell'
+            sh '$(npm bin)/cypress run --record --key=475a6393-b6e3-4065-86d1-b118626b5370 --parallell'
           }
         }
 
@@ -50,7 +50,7 @@ pipeline {
         stage('tester B') {
           steps {
             echo "Running build ${env.BUILD_ID}"
-            sh '$(npm bin)/cypress run --record --parallell'
+            sh '$(npm bin)/cypress run --record --key=475a6393-b6e3-4065-86d1-b118626b5370 --parallell'
           }
         }
       }
