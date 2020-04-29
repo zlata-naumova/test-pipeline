@@ -10,7 +10,7 @@ pipeline {
       steps {
         echo "Running build ${env.BUILD_ID} on ${env.JENKINS_URL}"
         sh 'npm ci'
-        sh 'cypress verify'
+        sh '$(npm bin)/cypress verify'
       }
     }
 
@@ -22,14 +22,14 @@ pipeline {
         stage('tester A') {
           steps {
             echo "Running build ${env.BUILD_ID}"
-            sh 'cypress run --record --parallel'
+            sh '$(npm bin)/cypress run --record --parallel'
           }
         }
 
         stage('tester B') {
           steps {
             echo "Running build ${env.BUILD_ID}"
-            sh 'npm cypress run --record --parallel'
+            sh '$(npm bin)/cypress run --record --parallel'
           }
         }
 
