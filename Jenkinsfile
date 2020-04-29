@@ -18,14 +18,16 @@ pipeline {
         environment {
         CYPRESS_trashAssetsBeforeRuns = 'false'
       }
-    }
+    // }
 
-    stage('tester A') {
+    // stage('tester A') {
           steps {
             echo "Running build ${env.BUILD_ID}"
             sh '$(npm bin)/cypress run'
           }
         }
+  }
+}
 
     // stage('cypress parallel tests') {
     //   environment {
@@ -49,5 +51,5 @@ pipeline {
     //   }
     // }
 
-  }
-}
+//   }
+// }
