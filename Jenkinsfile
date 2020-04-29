@@ -25,14 +25,14 @@ ls'''
         stage('tester A') {
           steps {
             echo "Running build ${env.BUILD_ID}"
-            sh '$(npm bin)/cypress run --record'
+            sh '$(npm bin)/cypress run --parallel'
           }
         }
 
         stage('tester B') {
           steps {
             echo "Running build ${env.BUILD_ID}"
-            sh '$(npm bin)/cypress run --record'
+            sh '$(npm bin)/cypress run --parallel'
           }
         }
 
